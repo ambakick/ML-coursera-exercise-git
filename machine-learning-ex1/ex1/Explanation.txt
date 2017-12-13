@@ -1,0 +1,30 @@
+h(x) will give you the hypothesis
+
+now what we really need to do is to update theta
+
+where
+theta (j)=theta(j)- alpha*delta
+
+where delta is the rate of change of J(theta0,theta1)
+
+to find delta we have the formula as told by Andrew
+which is 
+delta=(1/m)*summation(h(x)^(j)-y(j)) *x(j)
+
+instead of doing the summation of (h(x)-y) we can do a matrix multiplication ie
+hx = X*theta -y
+where X is an m*2 matrix where x0 is the first feature and x1 is the second feature 
+      theta is a 2*1 matrix with theta1 and theta2
+      y is a m*1 matrix
+
+thus getting a matrix which contains difference of all the hypothesis and the real y
+
+hx will be a (m*1) matrix
+
+now substituting this in the equation of delta;
+
+delta=(1/m)*(X*theta-y)'*X;
+
+now finally for updating theta
+
+theta =theta- alpha*delta;
